@@ -51,7 +51,7 @@
         <td>
           <b>
           <router-link
-            class="hover:underline text-purple-700"
+            class="hover:underline"
             :to="{ name: 'coin-detail', params: { id: a.id } }"
             >{{ a.name }}</router-link
           >
