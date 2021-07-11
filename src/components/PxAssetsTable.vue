@@ -9,8 +9,8 @@
         </th>
         <th>Nombre</th>
         <th>Precio</th>
-        <th class="hidden sm:block">Cap. de Mercado</th>
-        <th class="hidden sm:block">Variación 24hs</th>
+        <th >Cap. de Mercado</th>
+        <th >Variación 24hs</th>
         <td class="hidden sm:block">
           <input
             class="
@@ -59,8 +59,8 @@
           <small class="ml-1 text-gray-500">{{ a.symbol }}</small>
         </td>
         <td>{{ dollar(a.priceUsd) }}</td>
-        <td class="hidden sm:block">{{ dollar(a.marketCapUsd) }}</td>
-        <td class="hidden sm:block"
+        <td >{{ dollar(a.marketCapUsd) }}</td>
+        <td 
           :class="
             a.changePercent24Hr.includes('-')
               ? 'text-red-600'
