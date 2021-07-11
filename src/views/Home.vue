@@ -4,7 +4,7 @@
     <ring-loader
       class="snipper"
       :loading="isLoading"
-      :color="'#68d391'"
+      :color="'#6D28D9'"
       :size="'50px'"
     ></ring-loader>
 

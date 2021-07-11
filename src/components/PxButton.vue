@@ -3,13 +3,13 @@
     @click="buttonClick"
     class="
       bg-transparent
-      hover:bg-green-500
-      text-green-700
+      hover:bg-purple-500
+      text-purple-700
       font-semibold
       hover:text-white
       py-2
       px-2
-      border border-green-500
+      border border-purple-500
       hover:border-transparent
       rounded
     "

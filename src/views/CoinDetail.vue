@@ -52,8 +52,10 @@
         <div class="my-10 sm:mt-0 flex flex-col justify-center text-center">
           <button
             class="
-              bg-green-500
-              hover:bg-green-700
+              bg-purple-700
+              hover:bg-purple-100
+              hover:text-purple-700
+              border border-purple-500
               text-white
               font-bold
               py-2
@@ -93,7 +95,7 @@
         </div>
       </div>
       <line-chart
-        :colors="['orange']"
+        :colors="['#6D28D9']"
         class="my-10"
         :min="min"
         :max="max"

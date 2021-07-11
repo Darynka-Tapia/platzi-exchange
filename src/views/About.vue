@@ -10,5 +10,8 @@
     <router-link to="/" class="mt-5 text-xl text-green-600 hover:underline"
       >Volver a la pagina de Inicio</router-link
     >
+
+
+    <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
   </div>
 </template>

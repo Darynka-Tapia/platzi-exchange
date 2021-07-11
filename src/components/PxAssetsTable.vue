@@ -1,17 +1,16 @@
 <template>
-  <table class="mt-2">
+  <table class="mt-2 overflow-auto">
     <thead>
       <tr class="bg-gray-100 border-b-2 border-gray-400">
         <th></th>
-        <th :class="{ up: sortOrder == 1, down: sortOrder == -1 }">
+        <th >
           <span class="underline cursor-pointer" @click="changeSortOrder()"
-            >Ranking</span
-          >
+            >Ranking</span> <span class="text-decoration:none" :class="{ up: sortOrder == 1, down: sortOrder == -1 }"></span>
         </th>
         <th>Nombre</th>
         <th>Precio</th>
-        <th>Cap. de Mercado</th>
-        <th>Variación 24hs</th>
+        <th class="hidden sm:block">Cap. de Mercado</th>
+        <th class="hidden sm:block">Variación 24hs</th>
         <td class="hidden sm:block">
           <input
             class="
@@ -34,12 +33,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr
+      <tr 
         v-for="a in filteredAssets"
         :key="a.id"
         class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100"
       >
-        <td>
+        <td >
           <img
             class="w-6 h-6"
             :src="`https://static.coincap.io/assets/icons/${a.symbol.toLowerCase()}@2x.png`"
@@ -50,16 +49,18 @@
           <b># {{ a.rank }}</b>
         </td>
         <td>
+          <b>
           <router-link
-            class="hover:underline text-green-600"
+            class="hover:underline text-purple-700"
             :to="{ name: 'coin-detail', params: { id: a.id } }"
             >{{ a.name }}</router-link
           >
+          </b>
           <small class="ml-1 text-gray-500">{{ a.symbol }}</small>
         </td>
         <td>{{ dollar(a.priceUsd) }}</td>
-        <td>{{ dollar(a.marketCapUsd) }}</td>
-        <td
+        <td class="hidden sm:block">{{ dollar(a.marketCapUsd) }}</td>
+        <td class="hidden sm:block"
           :class="
             a.changePercent24Hr.includes('-')
               ? 'text-red-600'
@@ -132,12 +133,16 @@ export default {
 </script>
 
 <style scoped>
+table thead{
+  color:#6D28D9;
+}
+
 .up::before {
-  content: "👆";
+  content: "▲";
 }
 
 .down::before {
-  content: "👇";
+  content: "▼";
 }
 
 td {
